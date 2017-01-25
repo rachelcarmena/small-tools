@@ -12,4 +12,14 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 (...)
 ```
 
+## Troubleshooting
+
+```
+com.fasterxml.jackson.databind.JsonMappingException: No serializer found for class .... 
+and no properties discovered to create BeanSerializer (to avoid exception, 
+disable SerializationFeature.FAIL_ON_EMPTY_BEANS)
+```
+
+Java Object properties must be public or have public getters.
+
 [More info about data-binding with Jackson](/FasterXML/jackson-databind).
