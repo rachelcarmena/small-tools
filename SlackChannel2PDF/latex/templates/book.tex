@@ -1,0 +1,28 @@
+\documentclass[12pt,oneside]{book}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, landscape]{geometry}
+\usepackage{graphicx}
+\usepackage{wasysym}
+\pagenumbering{gobble}
+\begin{document}
+\title{\Huge MY TITLE}
+\author{FROM: ...}
+\date{March, 2018}
+\maketitle
+{% for message in messages %}
+    {% set userid = message.user %}
+    \noindent \includegraphics[width=3cm]{images/{{ userid }}.jpg.eps}
+    {\bf {{ users[userid].name }}}: {{ message.text }}
+    \newline
+    \newline
+    {% if 'thread_messages' in message %}
+        {% for threadmessage in message.thread_messages %}
+            {% set userid = threadmessage.user %}
+            \indent \includegraphics[width=2cm]{images/{{ userid }}.jpg.eps}
+            {\bf {{ users[userid].name }}}: {{ threadmessage.text }}
+            \newline
+            \newline
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+\end{document}
