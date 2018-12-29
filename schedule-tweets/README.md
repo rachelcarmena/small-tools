@@ -7,7 +7,7 @@ When writing this document:
 
 ## Steps
 
-1. Login into TweetdDeck
+1. Login into TweetDeck
 2. Create a function into [Web Console](https://developer.mozilla.org/en-US/docs/Tools/Web_Console/The_command_line_interpreter) for creating a tweet (JQuery is not available). In this case, all the tweets will be scheduled at `10.30 AM`:
 ```
 function createTweet(message, day, goToNextMonth) {
