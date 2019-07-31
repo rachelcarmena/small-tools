@@ -8,9 +8,9 @@ When writing this document:
 ## Steps
 
 1. Login into TweetDeck
-2. Create a function into [Web Console](https://developer.mozilla.org/en-US/docs/Tools/Web_Console/The_command_line_interpreter) for creating a tweet (JQuery is not available). In this case, all the tweets will be scheduled at `10.30 AM`:
+2. Create a function into [Web Console](https://developer.mozilla.org/en-US/docs/Tools/Web_Console/The_command_line_interpreter) for creating a tweet. In this case, all the tweets will be scheduled at `10.30 AM`:
 ```
-function createTweet(message, day, goToNextMonth) {
+const scheduleTweet = (message, day, goToNextMonth) => {
     $(".tweet-button").click();
 
     $(".js-compose-text").value = message;
@@ -30,18 +30,18 @@ function createTweet(message, day, goToNextMonth) {
 ```
 3. Paste a list of calls to that function. For example, from 29th of December:
 ```
-setTimeout(createTweet, 3000, '...', 30, 0);
-setTimeout(createTweet, 6000, '...', 31, 0);
-setTimeout(createTweet, 9000, '...', 1, 1);
-setTimeout(createTweet, 12000, '...', 2, 0);
-setTimeout(createTweet, 15000, '...', 3, 0);
-setTimeout(createTweet, 18000, '...', 4, 0);
-setTimeout(createTweet, 21000, '...', 5, 0);
-setTimeout(createTweet, 24000, '...', 6, 0);
-setTimeout(createTweet, 27000, '...', 7, 0);
-setTimeout(createTweet, 30000, '...', 8, 0);
-setTimeout(createTweet, 33000, '...', 9, 0);
-setTimeout(createTweet, 36000, '...', 10, 0);
+setTimeout(scheduleTweet, 3000, '...', 30, 0);
+setTimeout(scheduleTweet, 6000, '...', 31, 0);
+setTimeout(scheduleTweet, 9000, '...', 1, 1);
+setTimeout(scheduleTweet, 12000, '...', 2, 0);
+setTimeout(scheduleTweet, 15000, '...', 3, 0);
+setTimeout(scheduleTweet, 18000, '...', 4, 0);
+setTimeout(scheduleTweet, 21000, '...', 5, 0);
+setTimeout(scheduleTweet, 24000, '...', 6, 0);
+setTimeout(scheduleTweet, 27000, '...', 7, 0);
+setTimeout(scheduleTweet, 30000, '...', 8, 0);
+setTimeout(scheduleTweet, 33000, '...', 9, 0);
+setTimeout(scheduleTweet, 36000, '...', 10, 0);
 ...
 ```
 Imagine you have a file with a list of Twitter aliases which must be mentioned, calls could be created by: [calls-creation.py](calls-creation.py).
